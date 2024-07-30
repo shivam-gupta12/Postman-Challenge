@@ -79,3 +79,14 @@ Watch the Video: 🔗 [Link](https://www.loom.com/share/a298d6521a4d4916878f41fa
 ```
 
 #### Thank you for participating and contributing to our learning community! 🙌
+
+
+# Instructions to run the code-
+
+type in terminal - 
+1. python python-parse.py
+2. python python-numberofcertifications.py
+3. python -m http.server
+
+4. go to localhost:8000 for website
+
