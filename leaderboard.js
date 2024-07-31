@@ -7,19 +7,10 @@ fetch('updated_data.json')
             .then(referralData => {
                 // Create a map to count the number of certifications per referral code
                 const referralCount = {};
-                const seenUsernames = new Set();
 
                 // Process data to count certifications per referral code
                 data.forEach(entry => {
                     const referralCode = entry['Referral Code'];
-                    const githubUsername = entry['Github Username'];
-
-                    // Check if the GitHub username has already been processed
-                    if (seenUsernames.has(githubUsername)) {
-                        return; // Skip this entry as it's a duplicate
-                    }
-                    seenUsernames.add(githubUsername);
-
                     if (!referralCount[referralCode]) {
                         const owner = Object.keys(referralData).find(name => referralData[name] === referralCode);
                         referralCount[referralCode] = {
@@ -50,3 +41,5 @@ fetch('updated_data.json')
             .catch(error => console.error('Error loading the referral data:', error));
     })
     .catch(error => console.error('Error loading the JSON data:', error));
+
+    
